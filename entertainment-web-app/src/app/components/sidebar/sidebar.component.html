@@ -1,0 +1,16 @@
+<div class="bg-third ml-12 mt-10 w-[96px] h-[800px] rounded-[20px]  sidebar">
+    <div class="h-full w-full grid grid-cols-1 justify-center  sidebar-container   ">
+        <a routerLink="/" class=" h-fit w-fit top-28 mx-auto relative " ><img src="../../../assets/logo.svg" alt="Home" class="relative  "/></a>
+        <div class="h-[200px] grid justify-center  ">
+            <div  *ngFor="let icon of icons">
+                <a [routerLink]="icon.path" >
+                    <img [src]="icon.src || icon.iconOnHover" alt="Icon"
+                (mouseenter)="icon.src = icon.iconOnHover"
+                (mouseleave)="icon.src = icon.iconOn"
+                >
+            </a>
+        </div>
+        </div>
+        <a routerLink="#" class="bottom-[-150px] relative mx-auto"><img src="../../../assets/image-avatar.png" alt="" class="w-[40px] h-[40px]"/></a>
+    </div>
+</div>
