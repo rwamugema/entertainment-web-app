@@ -1,13 +1,10 @@
-import { state } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { loadMovies } from 'src/store/actions/movie.action';
-import { MovieService } from 'src/store/data/movies.service';
 import { MoviesState } from 'src/store/reducers/movie.reducer';
-import * as moviedata from '../../../store/data/data';
-interface appState {
-  movies: MoviesState;
+import { Movies } from 'src/store/actions/movie.action';
+export interface appState {
+  Movies: MoviesState;
 }
 @Component({
   selector: 'app-movies',
@@ -15,11 +12,10 @@ interface appState {
   styleUrls: ['./movies.component.css'],
 })
 export class MoviesComponent {
-  movies$: Observable<MoviesState> = this.store.select((state) => state.movies);
-  constructor(private store: Store<appState>) {}
+  movies$: Observable<Movies[]> = this.store.select((state) => state.Movies.movies);
+  constructor(private store: Store<appState>) {
+  }
 
   ngOnInit() {
-    console.log(moviedata);
-    this.store.dispatch(loadMovies());
   }
 }

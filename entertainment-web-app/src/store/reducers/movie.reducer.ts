@@ -5,7 +5,7 @@ import {
   loadMoviesError,
   loadMoviesSuccess,
 } from '../actions/movie.action';
-import { Action } from 'rxjs/internal/scheduler/Action';
+import data from '../data/data.json';
 
 export interface MoviesState {
   movies: Movies[];
@@ -13,7 +13,7 @@ export interface MoviesState {
   error: string;
 }
 const initialState: MoviesState = {
-  movies:[],
+  movies: data,
   loading: false,
   error: '',
 };
