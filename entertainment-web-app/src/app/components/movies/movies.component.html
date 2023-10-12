@@ -4,7 +4,7 @@
     <div class="grid grid-cols-4 mt-[-5px]">
       <ng-container *ngFor="let movie of movies">
         <ng-container *ngIf="movie.category === 'Movie'">
-          <div class="mt-5 grid">
+          <div class="mt-5 grid relative">
             <div class="w-[350px] h-[194px]">
               <img
                 [src]="movie.thumbnail.regular.large"
@@ -27,6 +27,11 @@
               </div>
               <p class="text-[24px] text-white">{{ movie.title }}</p>
             </div>
+            <button
+            class="absolute top-5 right-12   w-[32px] h-[32px] bg-primary rounded-full grid items-center justify-center"
+            >
+            <img src="../../../assets/icon-bookmark-full.svg" alt="" />
+        </button>
           </div>
         </ng-container>
       </ng-container>
