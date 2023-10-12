@@ -12,10 +12,7 @@ export interface appState {
   styleUrls: ['./movies.component.css'],
 })
 export class MoviesComponent {
-  movies$: Observable<Movies[]> = this.store.select((state) => state.Movies.movies);
+  movies$: Observable<MoviesState> = this.store.select((state) => state.Movies);
   constructor(private store: Store<appState>) {
-  }
-
-  ngOnInit() {
   }
 }
