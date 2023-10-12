@@ -7,11 +7,13 @@ import { BookmarkedMoviesComponent } from '../components/bookmarked-movies/bookm
 import { BookmarkedSeriesComponent } from '../components/bookmarked-series/bookmarked-series.component';
 import { StoreModule } from '@ngrx/store';
 import { MovieReducer } from 'src/store/reducers/movie.reducer';
+import { MoviesComponent } from '../components/movies/movies.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     TvSeriesComponent,
+    MoviesComponent,
     BookmarkedMoviesComponent,
     BookmarkedSeriesComponent
 ],

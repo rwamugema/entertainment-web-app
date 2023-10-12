@@ -1,1 +1,35 @@
-<!-- <div *ngFor=""></div> -->
+<ng-container *ngIf="(movies$ | async)?.movies as movies">
+  <div class="ml-9 mt-14  w-[1500px]">
+    <h1 class="text-white text-[32px]">Movies</h1>
+    <div class="grid grid-cols-4 mt-[-5px]">
+      <ng-container *ngFor="let movie of movies">
+        <ng-container *ngIf="movie.category === 'Movie'">
+          <div class="mt-5 grid">
+            <div class="w-[350px] h-[194px]">
+              <img
+                [src]="movie.thumbnail.regular.large"
+                alt=""
+                class="rounded-[8px]"
+              />
+            </div>
+            <div class="mt-7 h-14 w-44  grid ">
+              <div class="flex justify-between items-center text-[15px] text-gray-400">
+                <span class="font-light">{{ movie.year }}</span>
+                .
+                <img
+                  src="../../../assets/icon-category-movie.svg"
+                  alt=""
+                  class="h-[12px] w-[12px]"
+                />
+                <span>{{ movie.category }}</span>
+                .
+                <span>{{ movie.rating }}</span>
+              </div>
+              <p class="text-[24px] text-white">{{ movie.title }}</p>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

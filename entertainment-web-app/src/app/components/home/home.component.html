@@ -1,4 +1,4 @@
-<ng-container *ngIf="(movies$ | async)?.movies as movies">
+<ng-container *ngIf="(movies$ | async)?.movies as movies; else loading">
   <div
     class="bg-transparent ml-9 mt-14 grid justify-between font-sans text-[32px] h-[293px]"
   >
@@ -20,7 +20,7 @@
               {{ movies.title }}
             </p>
             <p
-              class="text-white w-[137px] flex h-12 text-[15px] justify-between items-center font-light absolute bottom-11 left-10"
+              class="text-white w-[150px]  flex h-12 text-[15px] justify-between items-center font-light absolute bottom-11 left-10"
             >
               {{ movies.year }} <span>.</span
               ><img
@@ -78,3 +78,7 @@
     </div>
   </div>
 </ng-container>
+
+<ng-template #loading>
+<span class="text-white text-5xl">loading content</span>
+</ng-template>
