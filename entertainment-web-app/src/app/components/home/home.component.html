@@ -1,3 +1,4 @@
+<div class="relative left-32 top-20">
 <ng-container *ngIf="(movies$ | async)?.movies as movies; else loading">
   <div
     class="bg-transparent  mt-14 grid justify-between font-sans text-[32px] h-[293px]"
@@ -26,4 +27,5 @@
 </ng-container>
 <ng-template #loading>
   <span class="text-white text-5xl">loading content</span>
+
 </ng-template>

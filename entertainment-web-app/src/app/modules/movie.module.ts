@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { MovieReducer } from 'src/store/reducers/movie.reducer';
 import { MovieComponent } from '../components/movie/movie.component';
 import { MoviesComponent } from '../components/movies/movies.component';
+import { SearchPageComponent } from '../components/search-page/search-page.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { MoviesComponent } from '../components/movies/movies.component';
     TvSeriesComponent,
     MoviesComponent,
     BookmarkedSeriesComponent,
+    SearchPageComponent
   ],
   imports: [
     MovieRoute,

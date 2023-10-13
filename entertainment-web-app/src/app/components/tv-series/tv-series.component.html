@@ -1,12 +1,14 @@
-<ng-container  *ngIf="(series$ | async)?.movies as movies">
-  <div class="mt-14">
-    <h1 class="text-[32px] text-white">TV Series</h1>
-    <div class="flex flex-wrap">
-      <ng-container *ngFor="let movie of movies">
-        <ng-container *ngIf="movie.category === 'TV Series'">
-          <app-movie [movie]="movie"></app-movie>
+<div class="relative left-32 top-20">
+  <ng-container *ngIf="(series$ | async)?.movies as movies">
+    <div class="mt-14">
+      <h1 class="text-[32px] text-white">TV Series</h1>
+      <div class="flex flex-wrap">
+        <ng-container *ngFor="let movie of movies">
+          <ng-container *ngIf="movie.category === 'TV Series'">
+            <app-movie [movie]="movie"></app-movie>
+          </ng-container>
         </ng-container>
-      </ng-container>
+      </div>
     </div>
-  </div>
-</ng-container>
+  </ng-container>
+</div>

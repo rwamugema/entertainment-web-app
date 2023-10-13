@@ -1,1 +1,26 @@
-<p>search works!</p>
+<div class="w-[1400px] h-[40px] bg-transparent relative top-24 ml-32">
+  <div class="flex justify-between">
+    <button><img src="../../../assets/icon-search.svg" alt="" /></button>
+    <input
+      type="text"
+      [(ngModel)]="searchItems"
+      (input)="onSearch()"
+      placeholder="Search for Movie or TV serie"
+      class="w-[96%] outline-none bg-transparent caret-secondary font-medium text-white capitalize text-[24px] placeholder:text-gray-400 focus:border-b border-b-[#5A698F] focus:h-[42px]"
+    />
+  </div>
+  <ng-container>
+    <div
+      class="h-full z-10 left-14 top-1 relative bg-third w-96 flex flex-col shadow-lg"
+      *ngFor="let item of items"
+      [ngClass]="{ hidden: !isFocused }"
+    >
+      <a
+        routerLink="{{ item.title }}"
+        class="bg-transparent pl-4 hover:bg-primary capitalize py-2 my-1 items-center"
+      >
+        <h1 class="text-white">{{ item.title }}</h1>
+      </a>
+    </div>
+  </ng-container>
+</div>
