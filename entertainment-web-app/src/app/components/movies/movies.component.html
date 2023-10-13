@@ -1,11 +1,10 @@
-<ng-container *ngIf="(movies$ | async)?.movies as movies">
-  <div class="mt-14">
-    <h1 class="text-white text-[32px]">Movies</h1>
-    <div class="flex flex-wrap">
-      <app-movie
-        *ngFor="let movie of movies"
-        [movie]="movie"
-      ></app-movie>
+<div class="relative left-32 top-20">
+  <ng-container *ngIf="(movies$ | async)?.movies as movies">
+    <div class="mt-14">
+      <h1 class="text-white text-[32px]">Movies</h1>
+      <div class="flex flex-wrap">
+        <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
+      </div>
     </div>
-  </div>
-</ng-container>
+  </ng-container>
+</div>

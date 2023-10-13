@@ -1,28 +1,30 @@
-<ng-container *ngIf="(movies$ | async)?.movies as movies">
-  <div class="ml-9 mt-14 w-[1450px]">
-    <h1 class="text-white text-[32px]">Bookmarked Movies</h1>
-    <div class="grid grid-cols-4">
-      <ng-container *ngFor="let movie of movies">
-        <ng-container
-          *ngIf="movie.category === 'Movie' && movie.isBookmarked === true"
-        >
-          <app-movie [movie]="movie"></app-movie>
-        </ng-container>
-      </ng-container>
-    </div>
-    <div class="mt-8">
-      <h1 class="text-[32px] text-white">Bookmarked TV Series</h1>
+<div class="relative left-32 top-20">
+  <ng-container *ngIf="(movies$ | async)?.movies as movies">
+    <div class="mt-14 w-[1450px]">
+      <h1 class="text-white text-[32px]">Bookmarked Movies</h1>
       <div class="grid grid-cols-4">
         <ng-container *ngFor="let movie of movies">
           <ng-container
-            *ngIf="
-              movie.category === 'TV Series' && movie.isBookmarked === true
-            "
+            *ngIf="movie.category === 'Movie' && movie.isBookmarked === true"
           >
             <app-movie [movie]="movie"></app-movie>
           </ng-container>
         </ng-container>
       </div>
+      <div class="mt-8">
+        <h1 class="text-[32px] text-white">Bookmarked TV Series</h1>
+        <div class="grid grid-cols-4">
+          <ng-container *ngFor="let movie of movies">
+            <ng-container
+              *ngIf="
+                movie.category === 'TV Series' && movie.isBookmarked === true
+              "
+            >
+              <app-movie [movie]="movie"></app-movie>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
     </div>
-  </div>
-</ng-container>
+  </ng-container>
+</div>

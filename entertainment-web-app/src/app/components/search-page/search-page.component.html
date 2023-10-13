@@ -1,0 +1,9 @@
+<div class="relative top-24 mx-auto   w-full left-32 grid grid-cols-4 ">
+
+    <div *ngIf="searchedMovies$ | async as movies">
+        <div *ngFor="let m of movies">
+            <app-movie [movie]="m"></app-movie>
+        </div>
+        
+    </div>
+</div>
