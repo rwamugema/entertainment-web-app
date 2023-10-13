@@ -1,84 +1,29 @@
 <ng-container *ngIf="(movies$ | async)?.movies as movies; else loading">
   <div
-    class="bg-transparent ml-9 mt-14 grid justify-between font-sans text-[32px] h-[293px]"
+    class="bg-transparent  mt-14 grid justify-between font-sans text-[32px] h-[293px]"
   >
     <h1 class="text-white">Trending</h1>
     <div
-      class="flex flex-row overflow-scroll items-center w-[1500px] pr-5 scrollbar-hide"
+      class="flex flex-row overflow-x-scroll items-center h-fit mb-5 w-[1450px] pr-5 scrollbar-hide"
     >
       <ng-container *ngFor="let movies of movies">
         <ng-container *ngIf="movies.isTrending === true">
-          <div class="relative h-[230px] w-[470px] mr-9">
-            <div class="relative h-[230px] w-[470px]">
-              <img
-                [src]="movies.thumbnail.regular.large"
-                alt=""
-                class="h-[230px] w-[470px] rounded-[8px]"
-              />
-            </div>
-            <p class="text-white text-[24px] absolute bottom-2 left-10">
-              {{ movies.title }}
-            </p>
-            <p
-              class="text-white w-[150px]  flex h-12 text-[15px] justify-between items-center font-light absolute bottom-11 left-10"
-            >
-              {{ movies.year }} <span>.</span
-              ><img
-                src="../../../assets/icon-nav-movies.svg"
-                alt=""
-                class="h-5 w-5"
-              />
-              {{ movies.category }} <span>.</span> {{ movies.rating }}
-            </p>
-            <button
-              class="absolute top-5 right-5 w-[32px] h-[32px] bg-primary rounded-full flex items-center justify-center"
-            >
-              <img src="../../../assets/icon-bookmark-full.svg" alt="" />
-            </button>
-          </div>
+          <app-movie [movie]="movies"></app-movie>
         </ng-container>
       </ng-container>
     </div>
   </div>
-  <div class="ml-9 mt-10 grid justify-between font-sans text-[32px]">
+  <div class=" mt-20 grid justify-between font-sans text-[32px]">
     <h1 class="text-white">Recommended for you</h1>
     <div class="w-full grid grid-cols-4 mt-10">
       <ng-container *ngFor="let movies of movies">
         <ng-container *ngIf="movies.isTrending !== true">
-          <div class="grid mr-44 relative mb-10">
-            <div class="w-[300px] h-[174px]">
-              <img
-                [src]="movies.thumbnail.regular.large"
-                alt=""
-                class="rounded-[8px]"
-              />
-            </div>
-            <p
-              class="text-white w-52 flex h-12 text-[15px] justify-between items-center font-light mt-4"
-            >
-              {{ movies.year }} <span>.</span
-              ><img
-                src="../../../assets/icon-nav-movies.svg"
-                alt=""
-                class="h-5 w-5"
-              />
-              {{ movies.category }} <span>.</span> {{ movies.rating }}
-            </p>
-            <p class="text-white text-[24px]">
-              {{ movies.title }}
-            </p>
-            <button
-              class="absolute right-[-80px] top-5 w-[32px] h-[32px] bg-primary rounded-full grid items-center justify-center"
-            >
-              <img src="../../../assets/icon-bookmark-full.svg" alt="" />
-            </button>
-          </div>
+          <app-movie [movie]="movies"></app-movie>
         </ng-container>
       </ng-container>
     </div>
   </div>
 </ng-container>
-
 <ng-template #loading>
-<span class="text-white text-5xl">loading content</span>
+  <span class="text-white text-5xl">loading content</span>
 </ng-template>

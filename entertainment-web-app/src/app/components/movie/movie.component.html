@@ -1,0 +1,28 @@
+<div  class="mr-5 mt-5 grid relative" >
+    <div class="w-[350px] h-[194px]">
+      <img [src]="movie.thumbnail.regular.large" alt="" class="rounded-[8px]" />
+    </div>
+    <div class="mt-7 h-14 w-max grid">
+      <div
+        class="flex justify-between w-44 items-center text-[15px] text-gray-400"
+      >
+        <span class="font-light">{{ movie.year }}</span>
+        .
+        <img
+          src="../../../assets/icon-category-movie.svg"
+          alt=""
+          class="h-[12px] w-[12px]"
+        />
+        <span>{{ movie.category }}</span>
+        .
+        <span>{{ movie.rating }}</span>
+      </div>
+      <p class="text-[24px] text-white">{{ movie.title }}</p>
+    </div>
+    <button
+      class="absolute top-5 right-4 w-[32px] h-[32px] bg-primary rounded-full grid items-center justify-center"
+    >
+      <img src="../../../assets/icon-bookmark-full.svg" alt="" />
+    </button>
+  </div>
+  

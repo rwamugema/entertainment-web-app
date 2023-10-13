@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { MoviesState } from 'src/store/reducers/movie.reducer';
-import { Movies } from 'src/store/actions/movie.action';
+
 export interface appState {
   Movies: MoviesState;
 }
