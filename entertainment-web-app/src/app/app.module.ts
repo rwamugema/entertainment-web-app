@@ -8,7 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MovieModule } from './modules/movie.module';
 import { movieEffect } from 'src/store/data/movie.effect';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchPageComponent } from './components/search-page/search-page.component';
 
 @NgModule({
@@ -21,6 +21,7 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
     BrowserModule,
     MovieModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),

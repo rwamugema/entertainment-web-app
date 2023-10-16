@@ -1,31 +1,31 @@
-<div class="relative left-32 top-20">
-<ng-container *ngIf="(movies$ | async)?.movies as movies; else loading">
-  <div
-    class="bg-transparent  mt-14 grid justify-between font-sans text-[32px] h-[293px]"
-  >
-    <h1 class="text-white">Trending</h1>
+<div class="relative left-32 top-20 Movie-container">
+  <ng-container *ngIf="(movies$ | async)?.movies as movies; else loading">
     <div
-      class="flex flex-row overflow-x-scroll items-center h-fit mb-5 w-[1450px] pr-5 scrollbar-hide"
+      class="bg-transparent mt-14 grid justify-between font-sans text-[32px] h-[293px]"
     >
-      <ng-container *ngFor="let movies of movies">
-        <ng-container *ngIf="movies.isTrending === true">
-          <app-movie [movie]="movies"></app-movie>
+      <h1 class="text-white">Trending</h1>
+      <div
+        class="flex flex-row overflow-x-scroll items-center h-fit mb-5 w-[1450px]  pr-5 scrollbar-hide trending-container"
+      >
+        <ng-container *ngFor="let movies of movies">
+          <ng-container *ngIf="movies.isTrending === true">
+            <app-movie [movie]="movies"></app-movie>
+          </ng-container>
         </ng-container>
-      </ng-container>
+      </div>
     </div>
-  </div>
-  <div class=" mt-20 grid justify-between font-sans text-[32px]">
-    <h1 class="text-white">Recommended for you</h1>
-    <div class="w-full grid grid-cols-4 mt-10">
-      <ng-container *ngFor="let movies of movies">
-        <ng-container *ngIf="movies.isTrending !== true">
-          <app-movie [movie]="movies"></app-movie>
+    <div class="mt-20 grid justify-between font-sans text-[32px]">
+      <h1 class="text-white">Recommended for you</h1>
+      <div class="w-full grid grid-cols-4 mt-10 movies-Container">
+        <ng-container *ngFor="let movies of movies">
+          <ng-container *ngIf="movies.isTrending !== true">
+            <app-movie [movie]="movies"></app-movie>
+          </ng-container>
         </ng-container>
-      </ng-container>
+      </div>
     </div>
-  </div>
-</ng-container>
-<ng-template #loading>
-  <span class="text-white text-5xl">loading content</span>
-
-</ng-template>
+  </ng-container>
+  <ng-template #loading>
+    <span class="text-white text-5xl">loading content</span>
+  </ng-template>
+</div>
