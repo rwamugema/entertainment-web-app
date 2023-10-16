@@ -1,9 +1,12 @@
-<div class="relative top-24 mx-auto   w-full left-32 grid grid-cols-4 ">
-
-    <div *ngIf="searchedMovies$ | async as movies">
-        <div *ngFor="let m of movies">
-            <app-movie [movie]="m"></app-movie>
-        </div>
-        
+<div class="relative w-[1500px] top-24 left-32 Movie-container">
+  <p class="text-white text-[24px] relative my-5 ">
+    Found {{ MovieLength }} results of "{{ title }}"
+  </p>
+  <div *ngIf="searchedMovies$ | async as movies" >
+    <div class="flex flex-wrap movies-container">
+      <ng-container *ngFor="let m of movies">
+        <app-movie [movie]="m"></app-movie>
+      </ng-container>
     </div>
+  </div>
 </div>

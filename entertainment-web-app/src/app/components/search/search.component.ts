@@ -3,6 +3,8 @@ import { Store } from '@ngrx/store';
 import { appState } from '../movies/movies.component';
 import { Observable } from 'rxjs';
 import { Movies } from 'src/store/actions/movie.action';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -10,6 +12,7 @@ import { Movies } from 'src/store/actions/movie.action';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent {
+  SearchInput: FormGroup;
   isFocused: boolean = true;
   movies$: Observable<Movies[]> = this.store.select(
     (state) => state.Movies.movies,
@@ -17,11 +20,23 @@ export class SearchComponent {
   movies: Movies[] = [];
   searchItems: string = '';
   items: Movies[] = this.movies;
-  constructor(private store: Store<appState>) {}
+  constructor(
+    private store: Store<appState>,
+    private fb: FormBuilder,
+    private router: Router,
+  ) {
+    this.SearchInput = this.searchForm();
+  }
 
   ngOnInit() {
     this.movies$.subscribe((data) => {
       this.movies = data;
+    });
+  }
+
+  searchForm(): FormGroup {
+    return this.fb.group({
+      title: ['', [Validators.required]],
     });
   }
   onInputFocus() {
@@ -40,5 +55,13 @@ export class SearchComponent {
     setTimeout(() => {
       this.isFocused = false;
     }, 3000);
+  }
+
+  SearchButton() {
+    if (this.SearchInput.valid) {
+      console.log(this.SearchInput.controls['title'].value);
+      
+      this.router.navigate([`/${this.SearchInput.controls['title'].value}`])
+    }
   }
 }

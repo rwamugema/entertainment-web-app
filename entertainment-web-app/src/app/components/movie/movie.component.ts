@@ -7,6 +7,11 @@ import { Movies } from 'src/store/actions/movie.action';
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent {
+AddtoBoolmark(title: string) {
+  
+console.log(title);
+
+}
   @Input() movie: Movies = {
     title: '',
     thumbnail: {
