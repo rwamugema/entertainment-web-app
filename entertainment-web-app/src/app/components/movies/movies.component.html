@@ -3,7 +3,7 @@
     <div class="mt-14">
       <h1 class="text-white text-[32px]">Movies</h1>
       <div class="flex flex-wrap movies-Container">
-        <app-movie *ngFor="let movie of movies" [movie]="movie"></app-movie>
+        <app-movie *ngFor="let movie of movies" [movie]="movie" (bookmarkChanged)="toggleBookmark($event)"></app-movie>
       </div>
     </div>
   </ng-container>

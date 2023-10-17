@@ -18,11 +18,11 @@
       <span>{{ movie.rating }}</span>
     </div>
     <p class="text-[24px] text-white movie-title-container">{{ movie.title }}</p>
+    <button 
+    (click)="toggleBookmark(movie.title)"
+      class="absolute top-5 right-4 w-[32px] h-[32px] bg-primary rounded-full grid items-center justify-center"
+    >
+      <img src="../../../assets/icon-bookmark-full.svg" alt="" />
+    </button>
   </div>
-  <button 
-  (click)="AddtoBoolmark(movie.title)"
-    class="absolute top-5 right-4 w-[32px] h-[32px] bg-primary rounded-full grid items-center justify-center"
-  >
-    <img src="../../../assets/icon-bookmark-full.svg" alt="" />
-  </button>
 </div>

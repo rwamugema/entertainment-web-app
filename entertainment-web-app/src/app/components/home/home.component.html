@@ -9,7 +9,7 @@
       >
         <ng-container *ngFor="let movies of movies">
           <ng-container *ngIf="movies.isTrending === true">
-            <app-movie [movie]="movies"></app-movie>
+            <app-movie [movie]="movies" (bookmarkChanged)="toggleBookmark($event)"></app-movie>
           </ng-container>
         </ng-container>
       </div>
@@ -19,7 +19,7 @@
       <div class="w-full grid grid-cols-4 mt-10 movies-Container">
         <ng-container *ngFor="let movies of movies">
           <ng-container *ngIf="movies.isTrending !== true">
-            <app-movie [movie]="movies"></app-movie>
+            <app-movie [movie]="movies" (bookmarkChanged)="toggleBookmark($event)"></app-movie>
           </ng-container>
         </ng-container>
       </div>

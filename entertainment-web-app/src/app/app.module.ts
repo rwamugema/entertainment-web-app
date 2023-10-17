@@ -9,7 +9,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MovieModule } from './modules/movie.module';
 import { movieEffect } from 'src/store/data/movie.effect';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SearchPageComponent } from './components/search-page/search-page.component';
 
 @NgModule({
   declarations: [

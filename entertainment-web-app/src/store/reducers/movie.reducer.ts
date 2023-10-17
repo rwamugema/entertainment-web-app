@@ -4,8 +4,10 @@ import {
   loadMovies,
   loadMoviesError,
   loadMoviesSuccess,
+  loadBookmark,
 } from '../actions/movie.action';
 import data from '../data/data.json';
+import { state } from '@angular/animations';
 
 export interface MoviesState {
   movies: Movies[];
@@ -31,4 +33,21 @@ export const MovieReducer = createReducer(
     loading: false,
     error,
   })),
+);
+
+export const BookmarkedReducer = createReducer(
+  initialState,
+  on(loadBookmark, (state, { title }) => {
+    const movieIndex = state.movies.findIndex((item) => item.title === title);
+    let updatedMovies: Movies[] = [];
+    if (movieIndex !== -1) {
+      const bookmark = { ...state.movies[movieIndex] };
+
+      bookmark.isBookmarked = !bookmark.isBookmarked;
+      updatedMovies = [...state.movies];
+      updatedMovies[movieIndex] = bookmark;
+    }
+
+    return { ...state, movies: updatedMovies };
+  }),
 );
