@@ -29,3 +29,8 @@ export const loadMoviesError = createAction(
   '[Movie] load movies error',
   props<{ error: string }>(),
 );
+
+export const loadBookmark = createAction(
+  '[Bookmark] load bookmark',
+  props<{ title: string }>(),
+);

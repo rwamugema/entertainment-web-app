@@ -1,26 +1,32 @@
-<div class="relative left-32 top-20 Movie-container ">
+<div class="relative left-32 top-20 Movie-container">
   <ng-container *ngIf="(movies$ | async)?.movies as movies">
-    <div class="mt-14 w-[1450px]  container">
+    <div class="mt-14 w-[1450px] container">
       <h1 class="text-white text-[32px]">Bookmarked Movies</h1>
       <div class="grid grid-cols-4 movies-Container">
         <ng-container *ngFor="let movie of movies">
           <ng-container
             *ngIf="movie.category === 'Movie' && movie.isBookmarked === true"
           >
-            <app-movie [movie]="movie"></app-movie>
+            <app-movie
+              [movie]="movie"
+              (bookmarkChanged)="toggleBookmark($event)"
+            ></app-movie>
           </ng-container>
         </ng-container>
       </div>
-      <div class="mt-8 ">
-        <h1 class="text-[32px] text-white">Bookmarked TV Series</h1>
-        <div class="grid grid-cols-4 movies-Container ">
+      <div class="mt-8">
+        <h1 class="text-[32px] text-white">'Bookmarked TV Series</h1>
+        <div class="grid grid-cols-4 movies-Container">
           <ng-container *ngFor="let movie of movies">
             <ng-container
               *ngIf="
                 movie.category === 'TV Series' && movie.isBookmarked === true
               "
             >
-              <app-movie [movie]="movie"></app-movie>
+              <app-movie
+                [movie]="movie"
+                (bookmarkChanged)="toggleBookmark($event)"
+              ></app-movie>
             </ng-container>
           </ng-container>
         </div>
