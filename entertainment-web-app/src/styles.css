@@ -104,10 +104,16 @@
     height: 100%;
     display: grid;
   }
-}
-
-.active-link {
-  background-color: red;
+  .auth-form{
+    width: 340px;
+  }
+  .form-container{
+    width: 300px;
+  }
+  .error{
+    position: absolute;
+    right: 3;
+  }
 }
 
 @media ((min-width: 700px) and ( max-width: 991px)) {
