@@ -13,25 +13,11 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent {
   SearchInput: FormGroup;
-  isFocused: boolean = true;
-  movies$: Observable<Movies[]> = this.store.select(
-    (state) => state.Movies.movies,
-  );
-  movies: Movies[] = [];
-  searchItems: string = '';
-  items: Movies[] = this.movies;
   constructor(
-    private store: Store<appState>,
     private fb: FormBuilder,
     private router: Router,
   ) {
     this.SearchInput = this.searchForm();
-  }
-
-  ngOnInit() {
-    this.movies$.subscribe((data) => {
-      this.movies = data;
-    });
   }
 
   searchForm(): FormGroup {
@@ -39,29 +25,11 @@ export class SearchComponent {
       title: ['', [Validators.required]],
     });
   }
-  onInputFocus() {
-    this.isFocused = true;
-  }
-  onInputBru() {
-    this.isFocused = !this.isFocused;
-  }
-  onSearch() {
-    this.isFocused = true;
-    this.items = this.movies.filter((item) =>
-      item.title
-        .toLocaleLowerCase()
-        .includes(this.searchItems.toLocaleLowerCase()),
-    );
-    setTimeout(() => {
-      this.isFocused = false;
-    }, 3000);
-  }
-
   SearchButton() {
     if (this.SearchInput.valid) {
       console.log(this.SearchInput.controls['title'].value);
       
-      this.router.navigate([`/${this.SearchInput.controls['title'].value}`])
+      this.router.navigate([`/posts/${this.SearchInput.controls['title'].value}`])
     }
   }
 }
