@@ -7,7 +7,10 @@
       <div class="flex flex-wrap movies-Container">
         <ng-container *ngFor="let movie of movies">
           <ng-container *ngIf="movie.category === 'TV Series'">
-            <app-movie [movie]="movie" (bookmarkChanged)="toggleBookmark($event)"></app-movie>
+            <app-movie
+              [movie]="movie"
+              (bookmarkChanged)="toggleBookmark($event)"
+            ></app-movie>
           </ng-container>
         </ng-container>
       </div>

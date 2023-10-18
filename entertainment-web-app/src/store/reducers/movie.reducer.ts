@@ -14,7 +14,7 @@ export interface MoviesState {
   loading: boolean;
   error: string;
 }
-const initialState: MoviesState = {
+export const initialState: MoviesState = {
   movies: data,
   loading: false,
   error: '',
