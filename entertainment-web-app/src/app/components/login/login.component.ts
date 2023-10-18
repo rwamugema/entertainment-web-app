@@ -13,6 +13,7 @@ interface LoginFormState {
 })
 export class LoginComponent {
   LoginForm: FormGroup = this.createLoginForm();
+  invalidCredentials: boolean = false;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -46,6 +47,8 @@ export class LoginComponent {
       if (matchingUser) {
         localStorage.setItem('login', JSON.stringify(matchingUser));
         this.router.navigate(['/posts']);
+      }else{
+        this.invalidCredentials = true;
       }
     }
   }
