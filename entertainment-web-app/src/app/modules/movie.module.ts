@@ -9,10 +9,15 @@ import { BookmarkedReducer, MovieReducer } from 'src/store/reducers/movie.reduce
 import { MovieComponent } from '../components/movie/movie.component';
 import { MoviesComponent } from '../components/movies/movies.component';
 import { SearchPageComponent } from '../components/search-page/search-page.component';
+import { SidebarComponent } from '../components/sidebar/sidebar.component';
+import { SearchComponent } from '../components/search/search.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
+    SearchComponent,
+    SidebarComponent,
     HomeComponent,
     MovieComponent,
     TvSeriesComponent,
@@ -22,6 +27,8 @@ import { SearchPageComponent } from '../components/search-page/search-page.compo
   ],
   imports: [
     MovieRoute,
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     StoreModule.forFeature('Movies', MovieReducer),
     StoreModule.forFeature('BookMarked', BookmarkedReducer),

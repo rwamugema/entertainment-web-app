@@ -15,22 +15,22 @@ path: string;
 export class SidebarComponent {
  icons:Icons[] =  [{
    iconOn: '../../../assets/icon-nav-home.svg',
-   path: '/',
+   path: '/posts',
    src: '../../../assets/icon-nav-home.svg',
    iconOnHover: '../../../assets/icon-home-hover.svg'
   },{
   iconOn: '../../../assets/icon-nav-movies.svg',
-  path: '/movies',
+  path: '/posts/movies',
   src: '../../../assets/icon-nav-movies.svg',
   iconOnHover: '../../../assets/icon-movie-hover.svg'
 },{
   iconOn: '../../../assets/icon-nav-tv-series.svg',
-  path: '/tv-series',
+  path: '/posts/tv-series',
   src: '../../../assets/icon-nav-tv-series.svg',
   iconOnHover: '../../../assets/icon-tv-hover.svg'
 },{
   iconOn: '../../../assets/icon-bookmark-empty.svg',
-  path: '/bookmarked',
+  path: '/posts/bookmarked',
   src: '../../../assets/icon-bookmark-empty.svg',
   iconOnHover: '../../../assets/icon-bookmark-hover.svg'
 },

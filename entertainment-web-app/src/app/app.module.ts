@@ -9,16 +9,17 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MovieModule } from './modules/movie.module';
 import { movieEffect } from 'src/store/data/movie.effect';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './components/login/login.component';
+import { UserModule } from './modules/user.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent,
-    SidebarComponent,
+   
   ],
   imports: [
     BrowserModule,
-    MovieModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,

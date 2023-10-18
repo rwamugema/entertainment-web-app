@@ -1,4 +1,6 @@
-<div class="relative left-32 top-20 Movie-container">
+<app-sidebar></app-sidebar>
+<app-search></app-search>
+<div class="relative left-40 top-20 Movie-container">
   <ng-container *ngIf="(series$ | async)?.movies as movies">
     <div class="mt-14">
       <h1 class="text-[32px] text-white">TV Series</h1>

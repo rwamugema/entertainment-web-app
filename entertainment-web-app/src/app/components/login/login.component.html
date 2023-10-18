@@ -1,0 +1,45 @@
+<div class="w-screen h-screen pt-24">
+  <img src="../../../assets/logo.svg" alt="" class="mx-auto" />
+  
+  <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()"
+    class="w-[400px] h-[373px] bg-third pl-7 pt-6 mt-36 mx-auto rounded-[20px]">
+    <h1 class="text-white text-[32px]">Login</h1>
+    <div class="relative mt-10">
+        <div class=" w-[336px] relative">
+            <input
+            type="text"
+            placeholder="Email address"
+            formControlName="email"
+            class="outline-none bg-transparent text-white font-light w-[336px] h-[37px] border-b border-[#5A698F] pl-3 pb-3 mb-9 focus:border-b-[#ffffff]"
+          />
+            <div *ngIf="LoginForm.get('email')?.invalid && (LoginForm.get('email')?.dirty || LoginForm.get('email')?.touched)">
+                <p *ngIf="LoginForm.get('email')?.hasError('required')" class="text-[15px] font-light text-secondary absolute right-0 top-1">Can't be empty</p>
+              </div>
+          </div>
+      
+      <div class=" w-[336px] relative">
+          <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          class="outline-none bg-transparent text-white font-light w-[336px] h-[37px] border-b border-[#5A698F] pl-3 pb-3 focus:border-b-[#ffffff]"
+          />
+          <div *ngIf="LoginForm.get('password')?.invalid && (LoginForm.get('password')?.dirty || LoginForm.get('password')?.touched)">
+              <p *ngIf="LoginForm.get('password')?.hasError('required')" class="text-[15px] font-light text-secondary absolute right-0 top-1">Can't be empty</p>
+            </div>
+        </div>
+      <button type="submit"
+        class="w-[336px] h-[48px] bg-secondary font-light mt-9 text-white rounded-[6px] hover:bg-white hover:text-black  "
+      >
+        Login to your account
+      </button>
+      <p class="mt-5 text-white">
+        Don't have an account?<a
+          routerLink="/signup"
+          class="text-secondary ml-2"
+          >Sign Up</a
+        >
+      </p>
+    </div>
+  </form>
+</div>

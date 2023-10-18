@@ -1,4 +1,6 @@
-<div class="relative left-32 top-20 Movie-container">
+<app-sidebar></app-sidebar>
+<app-search></app-search>
+<div class="relative left-40 top-20 Movie-container">
   <ng-container *ngIf="(movies$ | async)?.movies as movies; else loading">
     <div
       class="bg-transparent mt-14 grid justify-between font-sans text-[32px] h-[293px]"
