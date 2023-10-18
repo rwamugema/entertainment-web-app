@@ -26,10 +26,13 @@ Users should be able to:
 - Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
 - Add/Remove bookmarks from all movies and TV series
 - Search for relevant shows on all pages
+- *Bonus-Login and signup functionality
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![home](./home.png)
+![login](./login.png)
+![signup](./signup.png)
 
 ### Links
 
