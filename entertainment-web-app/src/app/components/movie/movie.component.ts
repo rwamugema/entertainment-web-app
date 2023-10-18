@@ -1,11 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { MovieService } from 'src/app/movie.service';
-import { Movies, loadBookmark } from 'src/store/actions/movie.action';
+import { Movies } from 'src/store/actions/movie.action';
 import { appState } from '../movies/movies.component';
 import { Observable } from 'rxjs';
-import { state } from '@angular/animations';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie',

@@ -35,19 +35,8 @@ export class SidebarComponent {
   iconOnHover: '../../../assets/icon-bookmark-hover.svg'
 },
 ]
-activeRoute: string = ''
- constructor( private router: Router){
-  this.router.events.subscribe((event) => {
-    if (event instanceof NavigationEnd) {
-      this.activeRoute = event.url;
-    }
-  });
- }
 
- isActive(route: string): boolean{
-  console.log(this.router.url, route);
-  
-  return this.router.url === route
+ constructor( ){}
 
- }
+
 }
